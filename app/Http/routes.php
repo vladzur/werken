@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PostsController@index');
+
+Route::get('admin/', 'Admin\DashboardController@index');
 
 
 // Authentication routes...

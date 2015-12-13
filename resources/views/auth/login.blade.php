@@ -6,6 +6,7 @@
 		</div>
 	@endif
 	<form class="form-signin" action="{!! url('auth/login') !!}" method="post">
+		{!! csrf_field() !!}
 		<h2 class="form-signin-heading">Acceder</h2>
 		<label for="inputEmail" class="sr-only">Dirección de correo</label>
 		<input type="email" name="email" value="{{ old('email') }}" id="inputEmail" class="form-control"
