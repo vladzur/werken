@@ -13,7 +13,6 @@
 
 Route::get('/', 'PostsController@index');
 
-Route::get('admin/', 'Admin\DashboardController@index');
 
 
 // Authentication routes...
@@ -24,3 +23,7 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+// Admin routes
+Route::get('admin/', 'Admin\DashboardController@index');
+Route::resource('admin/posts', 'Admin\PostsController');
