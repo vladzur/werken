@@ -12,8 +12,10 @@
     <!-- CSS -->
     {!! Html::style('css/app.css') !!}
     {!! Html::style('css/admin.css') !!}
+    {!! Html::style('css/bootstrap3-wysihtml5.css') !!}
             <!-- Scripts -->
     {!! Html::script('js/app.js') !!}
+    {!! Html::script('js/bootstrap3-wysihtml5.js') !!}
 </head>
 
 <body>

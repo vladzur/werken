@@ -24,6 +24,13 @@ elixir(function(mix) {
         'public/js/app.js',
         'node_modules'
     )
+        .scripts(
+            [
+                'bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.all.min.js'
+            ],
+            'public/js/bootstrap3-wysihtml5.js',
+            'bower_components'
+        )
         .styles(
             [
                 'admin.css'
@@ -41,4 +48,12 @@ elixir(function(mix) {
         ],
         'public/css/login.css'
     )
+        .styles(
+            [
+                'bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.css'
+            ],
+            'public/css/bootstrap3-wysihtml5.css',
+            'bower_components'
+        )
+        .copy('node_modules/bootstrap/dist/fonts/', 'public/fonts/bootstrap/')
 });
