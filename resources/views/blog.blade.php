@@ -22,7 +22,7 @@
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
-            <a class="blog-nav-item active" href="#">Home</a>
+            <a class="blog-nav-item active" href="{{ url('/') }}">Home</a>
             <a class="blog-nav-item" href="#">About</a>
         </nav>
     </div>
@@ -39,13 +39,6 @@
         <div class="col-sm-8 blog-main">
 
             @yield('content')
-
-            <nav>
-                <ul class="pager">
-                    <li><a href="#">Previous</a></li>
-                    <li><a href="#">Next</a></li>
-                </ul>
-            </nav>
 
         </div><!-- /.blog-main -->
 

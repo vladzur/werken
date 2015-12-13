@@ -10,4 +10,6 @@
     </div>
     @endforeach
 
+    {!! $posts->render() !!}
+
 @endsection
