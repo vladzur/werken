@@ -25,5 +25,5 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // Admin routes
-Route::get('admin/', 'Admin\DashboardController@index');
+Route::get('admin/dashboard', 'Admin\DashboardController@index');
 Route::resource('admin/posts', 'Admin\PostsController');

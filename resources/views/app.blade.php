@@ -13,9 +13,13 @@
     {!! Html::style('css/app.css') !!}
     {!! Html::style('css/admin.css') !!}
     {!! Html::style('css/bootstrap3-wysihtml5.css') !!}
-            <!-- Scripts -->
+    {!! Html::style('css/datatables.css') !!}
+
+    <!-- Scripts -->
     {!! Html::script('js/app.js') !!}
+    {!! Html::script('js/datatables.js') !!}
     {!! Html::script('js/bootstrap3-wysihtml5.js') !!}
+
 </head>
 
 <body>
@@ -34,15 +38,20 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li {!! Request::is('admin/dashboard*') ? 'class="active"' : '' !!}}><a
-                            href="{!! url('admin/dashboard') !!}">Home</a></li>
-                <li {!! Request::is('admin/tags*') ? 'class="active"' : '' !!}}><a
-                            href="{!! url('admin/tags') !!}">Tags</a></li>
-                <li {!! Request::is('admin/posts*') ? 'class="active"' : '' !!}}><a href="{!! url('admin/posts') !!}">Posts</a>
+                <li {!! Request::is('admin/dashboard*') ? 'class="active"' : '' !!}}>
+                    <a href="{!! url('admin/dashboard') !!}">Home</a>
+                </li>
+                <li {!! Request::is('admin/posts*') ? 'class="active"' : '' !!}}>
+                    <a href="{!! url('admin/posts') !!}">Posts</a>
+                </li>
+                <li {!! Request::is('admin/tags*') ? 'class="active"' : '' !!}}>
+                    <a href="{!! url('admin/tags') !!}">Tags</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{!! url('auth/logout') !!}">Logout</a></li>
+                <li>
+                    <a href="{!! url('auth/logout') !!}">Logout</a>
+                </li>
             </ul>
         </div>
     </div>
