@@ -15,9 +15,10 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">{{ $post->title }}</h3>
                 </div>
-                <div class="panel-body">
-                    {!! $post->content !!}
+                <div class="panel-body" id="body_text">
+                    {!! Markdown::parse($post->content) !!}
                 </div>
             </div>
         </div>
     </div>
+@endsection

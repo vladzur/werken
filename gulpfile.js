@@ -23,9 +23,9 @@ elixir(function(mix) {
     )
         .scripts(
             [
-                'bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.all.min.js'
+                'simplemde/dist/simplemde.min.js'
             ],
-            'public/js/bootstrap3-wysihtml5.js',
+            'public/js/simplemde.js',
             'bower_components'
         )
         .scripts(
@@ -55,9 +55,9 @@ elixir(function(mix) {
     )
         .styles(
             [
-                'bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.css'
+                'simplemde/dist/simplemde.min.css'
             ],
-            'public/css/bootstrap3-wysihtml5.css',
+            'public/css/simplemde.css',
             'bower_components'
         )
         .styles(

@@ -17,8 +17,8 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.6",
-    "bootstrap3-wysihtml5-bower": "~0.3.3",
     "datatables.net": "~1.10.10",
-    "datatables.net-bs": "~1.10.10"
+    "datatables.net-bs": "~1.10.10",
+    "simplemde": "~1.9.0"
   }
 }

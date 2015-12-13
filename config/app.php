@@ -148,8 +148,12 @@ return [
         /*
          * Collective HTML
          */
-        Collective\Html\HtmlServiceProvider::class
+        Collective\Html\HtmlServiceProvider::class,
 
+        /*
+         * ParseDown
+         */
+        AlfredoRamos\ParsedownExtra\ParsedownExtraServiceProvider::class
     ],
 
     /*
@@ -199,6 +203,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
+        'Markdown'  => AlfredoRamos\ParsedownExtra\Facades\ParsedownExtra::class
 
     ],
 

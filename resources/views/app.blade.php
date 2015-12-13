@@ -8,17 +8,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>Totems System</title>
+    <title>Werken Blog Manager</title>
     <!-- CSS -->
     {!! Html::style('css/app.css') !!}
     {!! Html::style('css/admin.css') !!}
-    {!! Html::style('css/bootstrap3-wysihtml5.css') !!}
+    {!! Html::style('css/simplemde.css') !!}
     {!! Html::style('css/datatables.css') !!}
 
     <!-- Scripts -->
     {!! Html::script('js/app.js') !!}
     {!! Html::script('js/datatables.js') !!}
-    {!! Html::script('js/bootstrap3-wysihtml5.js') !!}
+    {!! Html::script('js/simplemde.js') !!}
 
 </head>
 
@@ -34,7 +34,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{!! url('admin/dashboard') !!}">Blog Manager</a>
+            <a class="navbar-brand" href="{!! url('admin/dashboard') !!}">Werken Blog Manager</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
