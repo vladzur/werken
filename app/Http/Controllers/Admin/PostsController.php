@@ -43,6 +43,7 @@ class PostsController extends Controller
         $post = new Post();
         $post->fill($request->all());
         $post->user_id = Auth::user()->id;
+        $post->slug = str_slug($post->title);
         $post->save();
         return redirect('admin/posts');
     }
@@ -67,7 +68,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('admin.posts.edit', ['post' => $post]);
     }
 
     /**
@@ -79,7 +81,10 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->slug = str_slug($post->title);
+        $post->update($request->all());
+        return redirect('admin/posts/' . $id);
     }
 
     /**
@@ -90,6 +95,8 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->delete();
+        return redirect('admin/posts');
     }
 }

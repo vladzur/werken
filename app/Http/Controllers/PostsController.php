@@ -17,7 +17,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = Post::orderBy('created_at', 'desc')->paginate();
         return view('posts/index', ['posts' => $posts]);
     }
 
@@ -45,12 +45,13 @@ class PostsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $post = Post::where('slug', $slug)->first();
+        return view('posts.show', ['post' => $post]);
     }
 
     /**

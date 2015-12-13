@@ -13,7 +13,7 @@
     <!-- CSS -->
     {!! Html::style('css/app.css') !!}
     {!! Html::style('css/blog.css') !!}
-            <!-- Scripts -->
+    <!-- Scripts -->
     {!! Html::script('js/app.js') !!}
 </head>
 
@@ -31,12 +31,11 @@
 <div class="container">
 
     <div class="blog-header">
-        <h1 class="blog-title">Werkén Blog</h1>
+        <h1 class="blog-title">Werken Blog</h1>
         <p class="lead blog-description">The most important blog in the world.</p>
     </div>
 
     <div class="row">
-
         <div class="col-sm-8 blog-main">
 
             @yield('content')
@@ -52,9 +51,10 @@
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
             <div class="sidebar-module sidebar-module-inset">
-                <h4>About</h4>
-                <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet
-                    fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                <h4>Piensa...</h4>
+                <p>¿Por qué esta magnífica tecnología científica, que ahorra trabajo y nos hace la vida mas fácil, nos aporta tan poca felicidad?
+                    La repuesta es esta, simplemente: porque aún no hemos aprendido a usarla con tino.</p>
+                <p><i>Albert Einstein</i></p>
             </div>
             <div class="sidebar-module">
                 <h4>Archives</h4>
