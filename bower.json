@@ -1,0 +1,24 @@
+{
+  "name": "werken",
+  "description": "Blog",
+  "authors": [
+    "vladzur <vladzur@gmail.com>"
+  ],
+  "license": "GPL",
+  "homepage": "https://github.com/vladzur/werken",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.6",
+    "datatables.net": "~1.10.10",
+    "datatables.net-bs": "~1.10.10",
+    "simplemde": "~1.9.0"
+  }
+}
