@@ -2,4 +2,4 @@
 
 Just another Blog
 
-Thisis an alpha release... WIP.
+This is an alpha release... WIP.
