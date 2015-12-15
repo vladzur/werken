@@ -56,6 +56,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
+                    <a href="#">{{ Auth::user()->name }}</a>
+                </li>
+                <li>
                     <a href="{!! url('auth/logout') !!}">Logout</a>
                 </li>
             </ul>

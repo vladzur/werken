@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Role::all();
+        return view('admin.users.create', ['roles' => $roles]);
     }
 
     /**
@@ -39,7 +41,10 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User($request->all());
+        $user->password = bcrypt($request->password);
+        $user->save();
+        return redirect('admin/users');
     }
 
     /**
@@ -84,6 +89,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect('admin/users');
     }
 }
