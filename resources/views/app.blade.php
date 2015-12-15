@@ -20,6 +20,9 @@
     {!! Html::script('js/datatables.js') !!}
     {!! Html::script('js/simplemde.js') !!}
 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/agate.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+
 </head>
 
 <body>
@@ -65,6 +68,12 @@
 <div class="container">
     @yield('content')
 </div>
-
+<script type="application/javascript">
+    $(document).ready(function() {
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
 </body>
 </html>
