@@ -50,6 +50,9 @@
                 <li {!! Request::is('admin/users*') ? 'class="active"' : '' !!}}>
                     <a href="{!! url('admin/users') !!}">Users</a>
                 </li>
+                <li {!! Request::is('admin/configurations*') ? 'class="active"' : '' !!}}>
+                    <a href="{!! url('admin/configurations') !!}">Configurations</a>
+                </li>
                 @endcan
             </ul>
             <ul class="nav navbar-nav navbar-right">

@@ -16,6 +16,7 @@ class CreateTableConfigurations extends Migration
             $table->increments('id');
             $table->string('blog_title');
             $table->string('blog_description');
+            $table->string('blog_footer');
             $table->timestamps();
         });
     }
