@@ -4,4 +4,4 @@
 
 Just another Blog
 
-This is an alpha release... WIP.
+This is the blog used in www.vladzur.com, so you can see it working there.
