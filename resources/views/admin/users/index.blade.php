@@ -19,6 +19,8 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Role</th>
+                    <th>Created</th>
+                    <th>Modified</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -27,6 +29,8 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->role->name }}</td>
+                        <td>{{ $user->created_at }}</td>
+                        <td>{{ $user->modified_at }}</td>
                         <td>
                             <form method="post" action="{{ url("admin/users/{$user->id}") }}"
                                   onsubmit="return ConfirmDelete()">

@@ -66,8 +66,8 @@
 </div><!-- /.container -->
 
 <footer class="blog-footer">
-    <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a
-                href="https://twitter.com/mdo">@mdo</a>.</p>
+    <p>
+        Werkén es un blog sencillo y muy fácil de implementar, es de código abierto y puedes modificarlo libremente
     <p>
         <a href="#">Back to top</a>
     </p>

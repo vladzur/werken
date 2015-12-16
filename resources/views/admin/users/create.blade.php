@@ -31,11 +31,11 @@
                 {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
             </div>
 
-                <select name="role_id" class="form-control">
-                    @foreach($roles as $role)
-                        <option value="{{ $role->id }}">{{ $role->name }}</option>
-                    @endforeach
-                </select>
+            <select name="role_id" class="form-control">
+                @foreach($roles as $role)
+                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                @endforeach
+            </select>
 
             {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
