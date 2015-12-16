@@ -20,6 +20,9 @@
     {!! Html::script('js/datatables.js') !!}
     {!! Html::script('js/simplemde.js') !!}
 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/agate.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+
 </head>
 
 <body>
@@ -34,21 +37,28 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{!! url('admin/dashboard') !!}">Werken Blog Manager</a>
+            <a class="navbar-brand" href="{!! url('admin/posts') !!}">Werken Blog Manager</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li {!! Request::is('admin/dashboard*') ? 'class="active"' : '' !!}}>
-                    <a href="{!! url('admin/dashboard') !!}">Home</a>
-                </li>
+                @can('contributor')
                 <li {!! Request::is('admin/posts*') ? 'class="active"' : '' !!}}>
                     <a href="{!! url('admin/posts') !!}">Posts</a>
                 </li>
-                <li {!! Request::is('admin/tags*') ? 'class="active"' : '' !!}}>
-                    <a href="{!! url('admin/tags') !!}">Tags</a>
+                @endcan
+                @can('admin')
+                <li {!! Request::is('admin/users*') ? 'class="active"' : '' !!}}>
+                    <a href="{!! url('admin/users') !!}">Users</a>
                 </li>
+                <li {!! Request::is('admin/configurations*') ? 'class="active"' : '' !!}}>
+                    <a href="{!! url('admin/configurations') !!}">Configurations</a>
+                </li>
+                @endcan
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">{{ Auth::user()->name }}</a>
+                </li>
                 <li>
                     <a href="{!! url('auth/logout') !!}">Logout</a>
                 </li>
@@ -65,6 +75,12 @@
 <div class="container">
     @yield('content')
 </div>
-
+<script type="application/javascript">
+    $(document).ready(function() {
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
 </body>
 </html>

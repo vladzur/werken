@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Post;
+use App\Role;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
-class PostsController extends Controller
+class UsersController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('role.contributor');
+        $this->middleware('role.admin');
     }
 
     /**
@@ -24,8 +24,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('admin.posts.index', ['posts' => $posts]);
+        $users = User::all();
+        return view('admin.users.index', ['users' => $users]);
     }
 
     /**
@@ -35,74 +35,68 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        $roles = Role::all();
+        return view('admin.users.create', ['roles' => $roles]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $post = new Post();
-        $post->fill($request->all());
-        $post->user_id = Auth::user()->id;
-        $post->slug = str_slug($post->title);
-        $post->save();
-        return redirect('admin/posts');
+        $user = new User($request->all());
+        $user->password = bcrypt($request->password);
+        $user->save();
+        return redirect('admin/users');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $post = Post::findOrFail($id);
-        return view('admin.posts.show', ['post' => $post]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $post = Post::findOrFail($id);
-        return view('admin.posts.edit', ['post' => $post]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $post = Post::findOrFail($id);
-        $post->slug = str_slug($post->title);
-        $post->update($request->all());
-        return redirect('admin/posts/' . $id);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $post = Post::findOrFail($id);
-        $post->delete();
-        return redirect('admin/posts');
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect('admin/users');
     }
 }
