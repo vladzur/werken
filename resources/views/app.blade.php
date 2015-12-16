@@ -50,8 +50,14 @@
                 <li {!! Request::is('admin/tags*') ? 'class="active"' : '' !!}}>
                     <a href="{!! url('admin/tags') !!}">Tags</a>
                 </li>
+                <li {!! Request::is('admin/users*') ? 'class="active"' : '' !!}}>
+                    <a href="{!! url('admin/users') !!}">Users</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">{{ Auth::user()->name }}</a>
+                </li>
                 <li>
                     <a href="{!! url('auth/logout') !!}">Logout</a>
                 </li>
