@@ -31,6 +31,12 @@ class DatabaseSeeder extends Seeder
             'role_id' => 1
         ]);
 
+        DB::table('configurations')->insert([
+            'blog_title' => 'Werken',
+            'blog_description' => 'The most simple blog in the world',
+            'blog_footer' => 'This blog is Free Software, so you can modify it as you wish'
+        ]);
+
         Model::reguard();
     }
 }

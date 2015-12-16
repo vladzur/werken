@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Blog Template for Bootstrap</title>
+    <title>{{ $configuration->blog_title }}</title>
     <!-- CSS -->
     {!! Html::style('css/app.css') !!}
     {!! Html::style('css/blog.css') !!}
@@ -34,8 +34,8 @@
 <div class="container">
 
     <div class="blog-header">
-        <h1 class="blog-title">Werken Blog</h1>
-        <p class="lead blog-description">The most important blog in the world.</p>
+        <h1 class="blog-title">{{ $configuration->blog_title }}</h1>
+        <p class="lead blog-description">{{ $configuration->blog_description }}</p>
     </div>
 
     <div class="row">
@@ -52,13 +52,6 @@
                     La repuesta es esta, simplemente: porque aún no hemos aprendido a usarla con tino.</p>
                 <p><i>Albert Einstein</i></p>
             </div>
-            <div class="sidebar-module">
-                <h4>Archives</h4>
-                <ol class="list-unstyled">
-                    <li><a href="#">March 2014</a></li>
-                    <li><a href="#">February 2014</a></li>
-                </ol>
-            </div>
         </div><!-- /.blog-sidebar -->
 
     </div><!-- /.row -->
@@ -67,7 +60,7 @@
 
 <footer class="blog-footer">
     <p>
-        Werkén es un blog sencillo y muy fácil de implementar, es de código abierto y puedes modificarlo libremente
+       {{ $configuration->blog_footer }}
     <p>
         <a href="#">Back to top</a>
     </p>

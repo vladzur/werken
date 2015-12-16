@@ -30,3 +30,6 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('admin/dashboard', 'Admin\DashboardController@index');
 Route::resource('admin/posts', 'Admin\PostsController');
 Route::resource('admin/users', 'Admin\UsersController');
+Route::get('admin/configurations', 'Admin\ConfigurationsController@show');
+Route::get('admin/configurations/edit', 'Admin\ConfigurationsController@edit');
+Route::put('admin/configurations/{id}', 'Admin\ConfigurationsController@update');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Configuration;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -17,29 +18,9 @@ class PostsController extends Controller
      */
     public function index()
     {
+        $configuration = Configuration::find(1);
         $posts = Post::orderBy('created_at', 'desc')->simplePaginate(5);
-        return view('posts/index', ['posts' => $posts]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        return view('posts/index', ['posts' => $posts, 'configuration' => $configuration]);
     }
 
     /**
@@ -50,41 +31,9 @@ class PostsController extends Controller
      */
     public function show($slug)
     {
+        $configuration = Configuration::find(1);
         $post = Post::where('slug', $slug)->first();
-        return view('posts.show', ['post' => $post]);
+        return view('posts.show', ['post' => $post, 'configuration' => $configuration]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
