@@ -50,7 +50,7 @@ class PostsController extends Controller
         $post->fill($request->all());
         $post->user_id = Auth::user()->id;
         $post->slug = str_slug($post->title);
-        $post->draft = $request->draft;
+        $post->draft = !empty($request->draft);
         $post->save();
         return redirect('admin/posts');
     }
