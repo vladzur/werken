@@ -22,6 +22,15 @@
                 {!! Form::label('content', 'Content') !!}
                 {!! Form::textarea('content', $post->content, ['class' => 'form-control']) !!}
             </div>
+            <div class="form-group">
+                {!! Form::label('published_at', 'Published At') !!}
+                {!! Form::datetime('published_at', $post->published_at, ['class' => 'form-control']) !!}
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="draft" value="1" {{ $post->draft ? 'checked' : '' }}> Draft
+                </label>
+            </div>
 
             {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
