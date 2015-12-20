@@ -19,10 +19,18 @@
                 {!! Form::text('title', old('title'), ['class' => 'form-control']) !!}
             </div>
             <div class="form-group">
+                {!! Form::label('published_at', 'Published At') !!}
+                {!! Form::text('published_at', null, ['class' => 'form-control']) !!}
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="draft" value="1" checked> Draft
+                </label>
+            </div>
+            <div class="form-group">
                 {!! Form::label('content', 'Content') !!}
                 {!! Form::textarea('content', old('content'), ['class' => 'form-control']) !!}
             </div>
-
             {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
@@ -30,5 +38,10 @@
 
     <script type="text/javascript">
         var simplemde = new SimpleMDE({element: $("#content")[0]});
+        $(function() {
+            $('#published_at').datetimepicker({
+                format: 'YYYY-MM-DD HH:mm:ss'
+            });
+        });
     </script>
 @endsection

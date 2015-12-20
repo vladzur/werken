@@ -19,7 +19,7 @@ class PostsController extends Controller
     public function index()
     {
         $configuration = Configuration::find(1);
-        $posts = Post::orderBy('created_at', 'desc')->simplePaginate(5);
+        $posts = Post::published()->orderBy('published_at', 'desc')->simplePaginate(5);
         return view('posts/index', ['posts' => $posts, 'configuration' => $configuration]);
     }
 

@@ -19,6 +19,7 @@
     "bootstrap": "~3.3.6",
     "datatables.net": "~1.10.10",
     "datatables.net-bs": "~1.10.10",
-    "simplemde": "~1.9.0"
+    "simplemde": "~1.9.0",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37"
   }
 }

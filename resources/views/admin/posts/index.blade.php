@@ -17,16 +17,20 @@
                 <thead>
                 <tr>
                     <th>Created</th>
+                    <th>Published</th>
                     <th>Title</th>
                     <th>Author</th>
+                    <th>Draft</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
                 @foreach($posts as $post)
                     <tr>
                         <td>{{ $post->created_at }}</td>
+                        <td>{{ $post->published_at }}</td>
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->user->name }}</td>
+                        <td>{{ $post->draft }}</td>
                         <td>
                             <form method="post" action="{{ url("admin/posts/{$post->id}") }}"
                                   onsubmit="return ConfirmDelete()">

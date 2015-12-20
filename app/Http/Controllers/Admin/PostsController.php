@@ -50,6 +50,7 @@ class PostsController extends Controller
         $post->fill($request->all());
         $post->user_id = Auth::user()->id;
         $post->slug = str_slug($post->title);
+        $post->draft = !empty($request->draft);
         $post->save();
         return redirect('admin/posts');
     }
@@ -89,6 +90,7 @@ class PostsController extends Controller
     {
         $post = Post::findOrFail($id);
         $post->slug = str_slug($post->title);
+        $post->draft = $request->draft;
         $post->update($request->all());
         return redirect('admin/posts/' . $id);
     }
