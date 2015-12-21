@@ -60,7 +60,7 @@
 
 <footer class="blog-footer">
     <p>
-       {{ $configuration->blog_footer }}
+       {!! $configuration->blog_footer !!}
     <p>
         <a href="#">Back to top</a>
     </p>
@@ -72,5 +72,6 @@
         });
     });
 </script>
+{!! $configuration->analytics !!}
 </body>
 </html>
