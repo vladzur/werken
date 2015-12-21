@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $guarded = ['id'];
+    protected $guarded = ['id', 'tags'];
 
     public function tags()
     {

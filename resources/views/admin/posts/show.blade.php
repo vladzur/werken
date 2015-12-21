@@ -22,6 +22,10 @@
                     <h3 class="panel-title">{{ $post->title }}</h3>
                 </div>
                 <div class="panel-body" id="body_text">
+                    @foreach($post->tags as $tag)
+                        <span class="label label-default">#{{ $tag->name }}</span>
+                    @endforeach
+
                     {!! Markdown::parse($post->content) !!}
                 </div>
             </div>
