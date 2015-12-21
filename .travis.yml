@@ -5,7 +5,7 @@ php:
   - '7.0'
 sudo: required
 services: mysql
-before_script: mysql -e 'create database werken;'
+before_script: mysql -e "create database IF NOT EXISTS werken;" -uroot
 install:
   - composer install
   - cp .env.example .env
