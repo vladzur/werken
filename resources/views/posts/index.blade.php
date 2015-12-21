@@ -5,8 +5,8 @@
     @foreach($posts as $post)
         <div class="blog-post">
             <h2 class="blog-post-title"><a href="{{ url("articles/{$post->slug}") }}">{{ $post->title }}</a></h2>
-            <p class="blog-post-meta">{{ \Carbon\Carbon::parse($post->created_at)->toFormattedDateString() }}<a
-                        href="#">{{ $post->user->name }}</a></p>
+            <p class="blog-post-meta">{{ \Carbon\Carbon::parse($post->published_at)->toDayDateTimeString() }}
+                <a href="#">{{ $post->user->name }}</a></p>
             @foreach($post->tags as $tag)
                 <span class="label label-default">#{{ $tag->name }}</span>
             @endforeach
