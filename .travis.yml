@@ -5,8 +5,8 @@ php:
   - '7.0'
 sudo: required
 services: mysql
+before_script: mysql -e 'create database werken;'
 install:
-  - mysql -utravis 'create database myapp_test;'
   - composer install
   - cp .env.example .env
   - php artisan key:generate
