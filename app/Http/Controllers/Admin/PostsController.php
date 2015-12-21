@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Post;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Post;
+use App\Tag;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
@@ -35,7 +35,12 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        $tags = Tag::all();
+        foreach ($tags as $tag) {
+            $tagged[] = $tag->name;
+        }
+        $tag_list = json_encode($tagged);
+        return view('admin.posts.create', ['tag_list' => $tag_list]);
     }
 
     /**
@@ -50,7 +55,13 @@ class PostsController extends Controller
         $post->fill($request->all());
         $post->user_id = Auth::user()->id;
         $post->slug = str_slug($post->title);
+        $post->draft = !empty($request->draft);
         $post->save();
+        $tags = explode(',', $request->tags);
+        foreach ($tags as $tag) {
+            $tag_ids[] = Tag::getId($tag);
+        }
+        $post->tags()->sync($tag_ids);
         return redirect('admin/posts');
     }
 
@@ -75,7 +86,17 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::findOrFail($id);
-        return view('admin.posts.edit', ['post' => $post]);
+        $tags = Tag::all();
+        foreach ($tags as $tag) {
+            $tagged[] = $tag->name;
+        }
+        $tag_list = json_encode($tagged);
+        $current_tags = [];
+        foreach ($post->tags as $tag) {
+            $current_tags[] = $tag->name;
+        }
+        return view('admin.posts.edit',
+            ['post' => $post, 'tag_list' => $tag_list, 'current_tags' => implode(',', $current_tags)]);
     }
 
     /**
@@ -89,7 +110,13 @@ class PostsController extends Controller
     {
         $post = Post::findOrFail($id);
         $post->slug = str_slug($post->title);
+        $post->draft = $request->draft;
         $post->update($request->all());
+        $tags = explode(',', $request->tags);
+        foreach ($tags as $tag) {
+            $tag_ids[] = Tag::getId($tag);
+        }
+        $post->tags()->sync($tag_ids);
         return redirect('admin/posts/' . $id);
     }
 

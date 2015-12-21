@@ -12,13 +12,10 @@
     <!-- CSS -->
     {!! Html::style('css/app.css') !!}
     {!! Html::style('css/admin.css') !!}
-    {!! Html::style('css/simplemde.css') !!}
-    {!! Html::style('css/datatables.css') !!}
+    {!! Html::style('css/admin-vendor.css') !!}
 
     <!-- Scripts -->
-    {!! Html::script('js/app.js') !!}
-    {!! Html::script('js/datatables.js') !!}
-    {!! Html::script('js/simplemde.js') !!}
+    {!! Html::script('js/admin.js') !!}
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/agate.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
@@ -47,6 +44,9 @@
                 </li>
                 @endcan
                 @can('admin')
+                <li {!! Request::is('admin/tags*') ? 'class="active"' : '' !!}}>
+                    <a href="{!! url('admin/tags') !!}">Tags</a>
+                </li>
                 <li {!! Request::is('admin/users*') ? 'class="active"' : '' !!}}>
                     <a href="{!! url('admin/users') !!}">Users</a>
                 </li>

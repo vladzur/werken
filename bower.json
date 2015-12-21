@@ -19,6 +19,10 @@
     "bootstrap": "~3.3.6",
     "datatables.net": "~1.10.10",
     "datatables.net-bs": "~1.10.10",
-    "simplemde": "~1.9.0"
+    "simplemde": "~1.9.0",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37",
+    "bootstrap-tokenfield": "~0.12.1",
+    "typeahead.js": "~0.11.1",
+    "typeahead.js-bootstrap3.less": "typeahead.js-bootstrap-css#~1.0.1"
   }
 }

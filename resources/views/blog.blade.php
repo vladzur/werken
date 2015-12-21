@@ -14,7 +14,7 @@
     {!! Html::style('css/app.css') !!}
     {!! Html::style('css/blog.css') !!}
     <!-- Scripts -->
-    {!! Html::script('js/app.js') !!}
+    {!! Html::script('js/werken.js') !!}
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/agate.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
@@ -60,7 +60,7 @@
 
 <footer class="blog-footer">
     <p>
-       {{ $configuration->blog_footer }}
+       {!! $configuration->blog_footer !!}
     <p>
         <a href="#">Back to top</a>
     </p>
@@ -72,5 +72,6 @@
         });
     });
 </script>
+{!! $configuration->analytics !!}
 </body>
 </html>

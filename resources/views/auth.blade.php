@@ -13,7 +13,7 @@
 
             <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-    {!! Html::script('js/app.js') !!}
+    {!! Html::script('js/werken.js') !!}
 </head>
 
 <body>

@@ -12,4 +12,10 @@ class Tag extends Model
     {
         return $this->belongsToMany('App\Post');
     }
+
+    public static function getId($name)
+    {
+        $tag =Tag::where('name', trim($name))->first();
+        return $tag->id;
+    }
 }
