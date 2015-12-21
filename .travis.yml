@@ -6,7 +6,7 @@ php:
 sudo: required
 services: mysql
 before_script:
-  - mysql -e 'create database myapp_test;'
+  - mysql -utravis -e 'create database myapp_test;'
 install:
   - composer install
   - cp .env.example .env
