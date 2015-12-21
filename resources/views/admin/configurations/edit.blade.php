@@ -18,6 +18,10 @@
                     {!! Form::label('blog_footer', 'Footer') !!}
                     {!! Form::text('blog_footer', $configuration->blog_footer, ['class' => 'form-control']) !!}
                 </div>
+                <div class="form-group">
+                    {!! Form::label('analytics', 'Google Analytics') !!}
+                    {!! Form::textarea('analytics', $configuration->analytics, ['class' => 'form-control']) !!}
+                </div>
                 <button type="submit" class="btn btn-primary">Save</button>
             </form>
         </div>
