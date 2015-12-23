@@ -14,6 +14,7 @@
 Route::get('/', 'PostsController@index');
 Route::get('/articles', 'PostsController@index');
 Route::get('/articles/{slug}', 'PostsController@show');
+Route::get('/rss', 'RssController@index');
 
 
 
