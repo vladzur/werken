@@ -21,7 +21,7 @@
 
 @section('opengraph')
     <meta property="og:type" content="article"/>
-    <meta itemprop="og:headline" content="{{ urlencode($post->title) }}"/>
-    <meta itemprop="og:description" content="{!! str_limit(Markdown::parse($post->content), 200) !!}"/>
+    <meta itemprop="og:headline" content="{{ $post->title }}"/>
+    <meta itemprop="og:description" content="{{ str_limit($post->content, 200) }}"/>
     <meta property="og:image" content=""/>
 @endsection
