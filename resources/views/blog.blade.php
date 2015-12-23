@@ -7,6 +7,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
+    @yield('opengraph')
+
     <link rel="icon" href="../../favicon.ico">
 
     <title>{{ $configuration->blog_title }}</title>
@@ -15,13 +17,28 @@
     {!! Html::style('css/blog.css') !!}
     <!-- Scripts -->
     {!! Html::script('js/werken.js') !!}
-
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/agate.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
 </head>
 
 <body>
+<script>window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
 
+        t._e = [];
+        t.ready = function(f) {
+            t._e.push(f);
+        };
+
+        return t;
+    }(document, "script", "twitter-wjs"));</script>
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
