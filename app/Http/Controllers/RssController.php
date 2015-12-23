@@ -32,7 +32,7 @@ class RssController extends Controller
             $item
                 ->title($post->title)
                 ->description($parsedown->parse($post->content))
-                ->url(url("/posts/$post->slug"))
+                ->url(url("/articles/$post->slug"))
                 ->appendTo($channel);
         }
 

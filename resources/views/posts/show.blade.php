@@ -10,7 +10,7 @@
         @endforeach
         <p>
         <div class="g-plus" data-action="share" data-annotation="bubble"
-             data-href="{{ url("/posts/$post->slug") }}"></div>
+             data-href="{{ url("/articles/$post->slug") }}"></div>
         <a class="twitter-share-button"
            href="https://twitter.com/intent/tweet?text={{ urlencode($post->title) }}">
             Tweet</a>
