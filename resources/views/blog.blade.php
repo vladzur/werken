@@ -20,6 +20,7 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/agate.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ url('/rss') }}" />
 </head>
 
 <body>
@@ -79,7 +80,7 @@
     <p>
        {!! $configuration->blog_footer !!}
     <p>
-        <a href="#">Back to top</a>
+        <a href="#">Back to top</a> | <a href="{{ url('/rss') }}">RSS</a>
     </p>
 </footer>
 <script type="application/javascript">
