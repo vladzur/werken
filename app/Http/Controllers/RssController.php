@@ -33,10 +33,11 @@ class RssController extends Controller
                 ->title($post->title)
                 ->description($parsedown->parse($post->content))
                 ->url(url("/articles/$post->slug"))
+                ->guid(url("/articles/$post->slug"), true)
                 ->appendTo($channel);
         }
-
-        return $feed;
+        return response($feed)
+            ->header('Content-Type', 'application/rss+xml');
     }
 
 }
